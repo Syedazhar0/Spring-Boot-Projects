@@ -1,0 +1,17 @@
+{"properties": [
+  {
+    "name": "management.metrics.export.zipkin.enabled",
+    "type": "java.lang.String",
+    "description": "A description for 'management.metrics.export.zipkin.enabled'"
+  },
+  {
+    "name": "management.tracing.sampler.probability",
+    "type": "java.lang.String",
+    "description": "A description for 'management.tracing.sampler.probability'"
+  },
+  {
+    "name": "spring.zipkin.base-url",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.zipkin.base-url'"
+  }
+]}

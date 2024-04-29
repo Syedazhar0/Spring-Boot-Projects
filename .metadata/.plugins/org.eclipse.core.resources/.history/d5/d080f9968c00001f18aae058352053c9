@@ -1,0 +1,24 @@
+spring.application.name=address-service
+
+#WHILE WORKING WITH LOADBALANCEN U CAN USE MULTIPLE SERVICE PORTS
+# TO BALANCE THE LOAD SEE EX BELOW IF NOT THE USE SINGLE PORT OK
+#ELSE FIRST RUN THE SERVICE BY USING SINGLE PORT AND AFTER CHANGE THE PORT
+#AND RERUN THE APPLICATION AND IN EUREKA SERVER YOU WILL SEE 2 SERVICES OR MORE ALSO 
+#IF THERE ARE MORE SERVICES
+
+#server.port=8086 FIRST PORT NUMBER REGISTERED WITH EUREKA SERVDER
+#NOW ADDING ANOTHER ONE WITH NEW PORT NUMBER
+
+server.port=8089
+
+spring.datasource.url=jdbc:h2:mem:azhar1
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=syed
+spring.datasource.password=azhar
+
+spring.h2.console.enabled=true
+spring.jpa.show-sql=true
+
+
+eureka.client.register-with-eureka=true
+eureka.client.fetch-registry=true

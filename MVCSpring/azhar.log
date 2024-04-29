@@ -1,0 +1,37 @@
+2024-04-16T07:43:45.733+05:30  INFO 13276 --- [MVCSpring] [restartedMain] com.tcs.web.MvcSpringApplication         : Starting MvcSpringApplication using Java 17.0.10 with PID 13276 (D:\SpringBoot Tool Suit examples\MVCSpring\target\classes started by kings in D:\SpringBoot Tool Suit examples\MVCSpring)
+2024-04-16T07:43:45.739+05:30  INFO 13276 --- [MVCSpring] [restartedMain] com.tcs.web.MvcSpringApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-04-16T07:43:45.807+05:30  INFO 13276 --- [MVCSpring] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-16T07:43:45.807+05:30  INFO 13276 --- [MVCSpring] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-16T07:43:46.643+05:30  INFO 13276 --- [MVCSpring] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-16T07:43:46.714+05:30  INFO 13276 --- [MVCSpring] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56 ms. Found 1 JPA repository interface.
+2024-04-16T07:43:47.326+05:30  INFO 13276 --- [MVCSpring] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8088 (http)
+2024-04-16T07:43:47.341+05:30  INFO 13276 --- [MVCSpring] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-16T07:43:47.342+05:30  INFO 13276 --- [MVCSpring] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-16T07:43:47.403+05:30  INFO 13276 --- [MVCSpring] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-16T07:43:47.404+05:30  INFO 13276 --- [MVCSpring] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1595 ms
+2024-04-16T07:43:47.434+05:30  INFO 13276 --- [MVCSpring] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-16T07:43:47.702+05:30  INFO 13276 --- [MVCSpring] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:azhar user=SYED
+2024-04-16T07:43:47.705+05:30  INFO 13276 --- [MVCSpring] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-16T07:43:47.720+05:30  INFO 13276 --- [MVCSpring] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:azhar'
+2024-04-16T07:43:47.885+05:30  INFO 13276 --- [MVCSpring] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-16T07:43:47.992+05:30  INFO 13276 --- [MVCSpring] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-16T07:43:48.042+05:30  INFO 13276 --- [MVCSpring] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-16T07:43:48.404+05:30  INFO 13276 --- [MVCSpring] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-16T07:43:49.544+05:30  INFO 13276 --- [MVCSpring] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-16T07:43:49.588+05:30  INFO 13276 --- [MVCSpring] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-16T07:43:49.867+05:30  WARN 13276 --- [MVCSpring] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-16T07:43:50.284+05:30  INFO 13276 --- [MVCSpring] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-16T07:43:50.332+05:30  INFO 13276 --- [MVCSpring] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8088 (http) with context path ''
+2024-04-16T07:43:50.346+05:30  INFO 13276 --- [MVCSpring] [restartedMain] com.tcs.web.MvcSpringApplication         : Started MvcSpringApplication in 5.085 seconds (process running for 6.188)
+2024-04-16T07:44:25.399+05:30  INFO 13276 --- [MVCSpring] [http-nio-8088-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-16T07:44:25.399+05:30  INFO 13276 --- [MVCSpring] [http-nio-8088-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-16T07:44:25.409+05:30  INFO 13276 --- [MVCSpring] [http-nio-8088-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2024-04-16T07:44:36.556+05:30  INFO 13276 --- [MVCSpring] [http-nio-8088-exec-6] c.tcs.web.controller.ProductController   : Product saved successfully
+2024-04-16T07:44:36.966+05:30  INFO 13276 --- [MVCSpring] [http-nio-8088-exec-2] c.tcs.web.controller.ProductController   : Displayed product list
+2024-04-16T07:44:42.521+05:30  INFO 13276 --- [MVCSpring] [http-nio-8088-exec-8] c.tcs.web.controller.ProductController   : Product deleted successfully
+2024-04-16T07:44:42.559+05:30  INFO 13276 --- [MVCSpring] [http-nio-8088-exec-7] c.tcs.web.controller.ProductController   : Displayed product list
+2024-04-16T07:44:50.902+05:30  INFO 13276 --- [MVCSpring] [RMI TCP Connection(7)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-04-16T07:44:50.940+05:30  INFO 13276 --- [MVCSpring] [RMI TCP Connection(7)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-16T07:44:50.956+05:30  WARN 13276 --- [MVCSpring] [RMI TCP Connection(7)-127.0.0.1] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-04-16T07:44:50.956+05:30  INFO 13276 --- [MVCSpring] [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-04-16T07:44:50.971+05:30  INFO 13276 --- [MVCSpring] [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

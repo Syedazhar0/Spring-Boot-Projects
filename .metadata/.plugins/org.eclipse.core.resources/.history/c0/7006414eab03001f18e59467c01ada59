@@ -1,0 +1,19 @@
+package com.tcs.mailservice.service;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import com.tcs.mailservice.details.MailDetails;
+
+@Service
+public class SimpleMailService {
+	@Value("${app.sender.mail}")
+	private String senderMail;
+
+	public String sendMail(MailDetails mailDetails) {
+		MailDetails mailDetails2 = new MailDetails();
+		mailDetails2.se
+		return null;
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.tcs.microservices2.loadbalancing;
+
+public class AddressLoadBalance {
+
+}

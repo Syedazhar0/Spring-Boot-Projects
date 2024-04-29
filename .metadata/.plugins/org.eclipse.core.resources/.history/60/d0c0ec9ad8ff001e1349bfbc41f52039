@@ -1,0 +1,41 @@
+package com.tcs.currencyexchange.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.tcs.currencyexchange.entity.CurrencyExchange;
+import com.tcs.currencyexchange.model.CurrencyExchangeModel;
+import com.tcs.currencyexchange.repository.CurrencyExchangeRepository;
+
+@Service
+public class CurrencyExchangeService {
+
+    @Autowired
+    private CurrencyExchangeRepository currencyExchangeRepository;
+
+    public CurrencyExchange getCurrencyById(long id) {
+        return currencyExchangeRepository.findById(id).get();
+    }
+
+    public List<CurrencyExchange> saveCurrency(List<CurrencyExchangeModel> exchangeModels) {
+        List<CurrencyExchange> savedExchanges = new ArrayList<>();
+        for (CurrencyExchangeModel model : exchangeModels) {
+            CurrencyExchange exchange = new CurrencyExchange();
+            exchange.setFromCurrency(model.getFromCurrency());
+            exchange.setToCurrency(model.getToCurrency());
+            exchange.setExchangeRate(model.getExchangeRate());
+            exchange.setQuantity(model.getQuantity());
+            exchange.setTotal(model.getExchangeRate() * model.getQuantity());
+            savedExchanges.add(exchange);
+        }
+        return currencyExchangeRepository.saveAll(savedExchanges);
+    }
+
+    public double calculateTotal(CurrencyExchangeModel exchangeModel) {
+        return exchangeModel.getExchangeRate() * exchangeModel.getQuantity();
+    }
+}
+

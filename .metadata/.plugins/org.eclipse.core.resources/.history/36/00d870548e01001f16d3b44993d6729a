@@ -1,0 +1,21 @@
+package com.tcs.microservices2.commonservice;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.tcs.microservices2.AddressFeignClient;
+import com.tcs.microservices2.addressresponse.AddressResponse;
+
+@Service
+public class CommonService {
+	
+	@Autowired
+	AddressFeignClient addressFeignClient;
+	
+	public AddressResponse getAddress(long id) {
+		
+		return addressFeignClient.getAddressById(id);
+		
+	}
+
+}

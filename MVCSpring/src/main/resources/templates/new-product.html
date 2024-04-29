@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        form {
+            display: inline-block;
+            text-align: left;
+        }
+        div {
+            margin-bottom: 10px;
+        }
+    </style>
+	<style type="text/css">
+	   	.error-message {
+			   color: red;
+		}
+	   
+	   </style>
+</head>
+
+<body>
+
+<h2>Add Product</h2>
+
+<form action="#" th:action="@{/products/saveproduct}" th:object="${product}" method="post">
+    <div>
+		<tr>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" th:field="*{name}" ><br>
+		<td> <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="error-message "></span></td>
+		</tr>
+    </div>
+    <div>
+		<tr>
+        <label for="madeIn">Made In:</label><br>
+        <input type="text" id="madeIn" th:field="*{madeIn}" ><br>
+		<td> <span th:if="${#fields.hasErrors('madeIn')}" th:errors="*{madeIn}" class="error-message "></span></td>
+		</tr>
+    </div>
+    <div>
+		<tr>
+        <label for="brand">Brand:</label><br>
+        <input type="text" id="brand" th:field="*{brand}" ><br>
+		<td> <span th:if="${#fields.hasErrors('brand')}" th:errors="*{brand}" class="error-message "></span></td>
+		</tr>
+    </div>
+    <div>
+		<tr>
+        <label for="price">Price:</label><br>
+        <input type="number" id="price" th:field="*{price}" min="0.01" step="0.01" ><br>
+		<td> <span th:if="${#fields.hasErrors('price')}" th:errors="*{price}" class="error-message "></span></td>
+		</tr>
+    </div>
+    <div>
+        <button type="submit">Save</button>
+    </div>
+</form>
+
+</body>
+</html>

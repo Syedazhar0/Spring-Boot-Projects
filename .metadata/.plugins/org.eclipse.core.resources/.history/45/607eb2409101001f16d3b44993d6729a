@@ -1,0 +1,30 @@
+package com.tcs.microservices2.commonservice;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.tcs.microservices2.AddressFeignClient;
+import com.tcs.microservices2.addressresponse.AddressResponse;
+
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+
+@Service
+public class CommonService {
+	
+	@Autowired
+	AddressFeignClient addressFeignClient;
+	
+	@CircuitBreaker(name = "addressService" , fallbackMethod = "fallbackGetAddress")// this annotation contains 2 args one name and method
+	public AddressResponse getAddressById(long id) {
+		
+		return addressFeignClient.getAddressById(id);
+		
+	}
+	
+	public AddressResponse fallbackGetAddress(long id) {
+		
+		return new AddressResponse();
+		
+	}
+
+}

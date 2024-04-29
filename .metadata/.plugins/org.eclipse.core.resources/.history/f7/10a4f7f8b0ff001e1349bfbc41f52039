@@ -1,0 +1,5 @@
+package com.tcs.currencyconversion.repository;
+
+public interface CurrencyRepository {
+
+}

@@ -1,0 +1,20 @@
+package com.tcs.currencyexchange.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+import com.tcs.currencyexchange.entity.CurrencyExchange;
+import com.tcs.currencyexchange.model.CurrencyExchangeModel;
+import com.tcs.currencyexchange.service.CurrencyExchangeService;
+
+@RestController
+@RequestMapping("/api/exchange")
+public class CurrencyExchangeController {
+
+    @Autowired
+    private CurrencyExchangeService currencyExchangeService;
+
+}
+

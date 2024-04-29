@@ -1,0 +1,7 @@
+spring.application.name=currency-exchange-service
+spring.datasource.url=jdbc:h2:mem:azhar4
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=syed
+spring.datasource.password=
+spring.h2.console.enabled=true
+spring.jpa.show-sql=true

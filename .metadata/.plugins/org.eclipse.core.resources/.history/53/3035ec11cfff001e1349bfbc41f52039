@@ -1,0 +1,5 @@
+package com.tcs.currencyexchange.model;
+
+public class CurrencyExchangeModel {
+
+}

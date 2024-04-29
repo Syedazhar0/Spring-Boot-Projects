@@ -1,0 +1,12 @@
+package com.tcs.currencyconversion.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.tcs.currencyconversion.controller.CurrencyController;
+
+@Service
+public class CurrencyCunversionService {
+	@Autowired private CurrencyController currencyController;
+
+}

@@ -1,0 +1,45 @@
+// CurrencyExchangeService.java
+package com.tcs.currencyexchange.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.tcs.currencyexchange.entity.CurrencyExchange;
+import com.tcs.currencyexchange.repository.CurrencyExchangeRepository;
+
+@Service
+public class CurrencyExchangeService {
+
+    @Autowired
+    private CurrencyExchangeRepository currencyExchangeRepository;
+
+    @Autowired
+    private RestTemplate restTemplate;
+
+
+    public CurrencyExchange getDataById(long id) {
+        String conversionServiceUrl = "http://localhost:8080/api/conversion/get/" + id;
+        ResponseEntity<CurrencyExchange> response = restTemplate.getForEntity(conversionServiceUrl, CurrencyExchange.class);
+        CurrencyExchange model = response.getBody();
+        
+        if (model != null) {
+            // Assuming you have setters in your CurrencyExchange class
+            CurrencyExchange existingData = currencyExchangeRepository.findById(id).orElse(null);
+            if (existingData != null) {
+                existingData.setFromCurrency(model.getFromCurrency());
+                existingData.setToCurrency(model.getToCurrency());
+                existingData.setQuantity(model.getQuantity());
+                existingData.setExchangeRate(model.getExchangeRate());
+                existingData.setTotal(model.getTotal());
+                return currencyExchangeRepository.save(existingData);
+            } else {
+                return currencyExchangeRepository.save(model);
+            }
+        } else {
+            // Handle error or return null if appropriate
+            return null;
+        }
+    }
+}

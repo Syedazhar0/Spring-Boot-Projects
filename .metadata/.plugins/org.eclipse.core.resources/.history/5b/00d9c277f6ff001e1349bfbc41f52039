@@ -1,0 +1,43 @@
+// CurrencyExchangeService.java
+package com.tcs.currencyexchange.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.tcs.currencyexchange.entity.CurrencyExchange;
+import com.tcs.currencyexchange.model.CurrencyExchangeModel;
+import com.tcs.currencyexchange.repository.CurrencyExchangeRepository;
+
+@Service
+public class CurrencyExchangeService {
+
+    @Autowired
+    private CurrencyExchangeRepository currencyExchangeRepository;
+
+    @Autowired
+    private RestTemplate restTemplate;
+
+	public List<CurrencyExchange> saveAllCurrency(List<CurrencyExchangeModel> currencyExchangeModels) {
+		List<CurrencyExchange> exchanges = new ArrayList<>();
+		for (CurrencyExchangeModel currencyExchange : currencyExchangeModels) {
+			CurrencyExchange currencyExchange2 = new CurrencyExchange();
+			currencyExchange2.setExchangeRate(currencyExchange.getExchangeRate());
+			exchanges.add(currencyExchange2);
+		}
+		
+		return currencyExchangeRepository.saveAll(exchanges);
+	}
+
+	public ResponseEntity<CurrencyExchange> getData(long id) {
+	    String conversionServiceUrl = "http://localhost:8080/api/conversion/" + id;
+	    ResponseEntity<CurrencyExchange> entity = restTemplate.getForEntity(conversionServiceUrl, CurrencyExchange.class);
+	    return entity;
+	}
+  
+   
+}

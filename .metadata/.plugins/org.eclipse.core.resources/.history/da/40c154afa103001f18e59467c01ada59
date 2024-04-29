@@ -1,0 +1,5 @@
+package com.tcs.mailservice.controller;
+
+public class SimpleMailSender {
+
+}

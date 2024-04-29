@@ -1,0 +1,5 @@
+package com.tcs.currencyexchange.repository;
+
+public interface CurrencyExchangeRepository {
+
+}

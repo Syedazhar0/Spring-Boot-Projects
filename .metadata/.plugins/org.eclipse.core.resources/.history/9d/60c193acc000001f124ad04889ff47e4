@@ -1,0 +1,53 @@
+// CurrencyExchangeService.java
+package com.tcs.currencyexchange.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.tcs.currencyexchange.entity.CurrencyExchange;
+import com.tcs.currencyexchange.model.CurrencyExchangeModel;
+import com.tcs.currencyexchange.repository.CurrencyExchangeRepository;
+
+@Service
+public class CurrencyExchangeService {
+
+    @Autowired
+    private CurrencyExchangeRepository currencyExchangeRepository;
+
+    @Autowired
+    private RestTemplate restTemplate;
+
+    public List<CurrencyExchange> saveAllCurrency(List<CurrencyExchangeModel> currencyExchangeModels) {
+        List<CurrencyExchange> exchanges = new ArrayList<>();
+        for (CurrencyExchangeModel currencyExchange : currencyExchangeModels) {
+            CurrencyExchange exchange = new CurrencyExchange();
+            exchange.setFromCurrency(currencyExchange.getFromCurrency());
+            exchange.setToCurrency(currencyExchange.getToCurrency());
+            exchange.setQuantity(currencyExchange.getQuantity());
+            exchange.setExchangeRate(currencyExchange.getExchangeRate());
+            exchange.setTotal(currencyExchange.getQuantity() * currencyExchange.getExchangeRate());
+            exchanges.add(exchange);
+        }
+        return currencyExchangeRepository.saveAll(exchanges);
+    }
+
+    public CurrencyExchange getDataById(long id) {
+        String conversionServiceUrl = "http://localhost:8080/api/conversion/get/" + id;
+        ResponseEntity<CurrencyExchangeModel> response = restTemplate.getForEntity(conversionServiceUrl, CurrencyExchangeModel.class);
+        CurrencyExchangeModel model = response.getBody();
+
+        CurrencyExchange exchange = new CurrencyExchange();
+        exchange.setFromCurrency(model.getFromCurrency());
+        exchange.setToCurrency(model.getToCurrency());
+        exchange.setQuantity(model.getQuantity());
+        exchange.setExchangeRate(model.getExchangeRate());
+        exchange.setTotal(model.getQuantity() * model.getExchangeRate());
+
+        return currencyExchangeRepository.save(exchange);
+    }
+}

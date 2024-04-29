@@ -1,0 +1,5 @@
+package com.tcs.mailservice.service;
+
+public class SimpleMailService {
+
+}

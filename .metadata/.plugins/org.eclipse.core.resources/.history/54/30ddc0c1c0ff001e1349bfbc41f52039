@@ -1,0 +1,5 @@
+package com.tcs.currencyconversion.model;
+
+public class CurrencyModel {
+
+}

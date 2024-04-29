@@ -1,0 +1,27 @@
+{"properties": [
+  {
+    "name": "management.metrics.export.zipkin.enabled",
+    "type": "java.lang.String",
+    "description": "A description for 'management.metrics.export.zipkin.enabled'"
+  },
+  {
+    "name": "management.tracing.sampler.probability",
+    "type": "java.lang.String",
+    "description": "A description for 'management.tracing.sampler.probability'"
+  },
+  {
+    "name": "spring.zipkin.base-url",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.zipkin.base-url'"
+  },
+  {
+    "name": "spring.cloud.config.discovery.service-id",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.cloud.config.discovery.service-id'"
+  },
+  {
+    "name": "spring.cloud.config.discovery.enabled",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.cloud.config.discovery.enabled'"
+  }
+]}

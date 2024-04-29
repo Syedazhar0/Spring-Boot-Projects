@@ -1,0 +1,33 @@
+// CurrencyExchangeService.java
+package com.tcs.currencyexchange.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.tcs.currencyexchange.entity.CurrencyExchange;
+import com.tcs.currencyexchange.model.CurrencyExchangeModel;
+import com.tcs.currencyexchange.repository.CurrencyExchangeRepository;
+
+@Service
+public class CurrencyExchangeService {
+
+    @Autowired
+    private CurrencyExchangeRepository currencyExchangeRepository;
+
+    @Autowired
+    private RestTemplate restTemplate;
+
+    // URL of the first microservice
+    private final String conversionServiceUrl = "http://localhost:8080/api/conversion";
+
+    public CurrencyExchange getCurrencyById(long id) {
+        return currencyExchangeRepository.findById(id).orElse(null);
+    }
+
+   
+}

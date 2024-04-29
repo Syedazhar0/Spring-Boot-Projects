@@ -1,0 +1,34 @@
+package com.tcs.currencyexchange.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
+
+import com.tcs.currencyexchange.entity.CurrencyExchange;
+import com.tcs.currencyexchange.model.CurrencyExchangeModel;
+import com.tcs.currencyexchange.service.CurrencyExchangeService;
+
+@RestController
+@RequestMapping("/api/conversion")
+public class CurrencyExchangeController {
+
+    @Autowired
+    private CurrencyExchangeService currencyExchangeService;
+    
+    
+    @PostMapping("/saveall")
+    public List<CurrencyExchange> saveAllCurrencies(@RequestBody List<CurrencyExchangeModel> currencyExchangeModels){
+		return currencyExchangeService.saveAllCurrency(currencyExchangeModels);
+    	
+    }
+    
+    @GetMapping("/get/{id}")
+    public ResponseEntity<CurrencyExchange> getData(@PathVariable long id) {
+       
+        return currencyExchangeService.getDataById(id);
+    }
+
+
+}
+

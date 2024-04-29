@@ -1,0 +1,16 @@
+spring.application.name=spring-api-gateway1
+
+# Eureka Server Configuration
+eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka
+
+spring.cloud.gateway.discovery.locator.enabled=true
+spring.cloud.gateway.discovery.locator.lower-case-service-id=true
+
+# Port Configuration
+server.port=8002
+
+# Gateway Configuration
+spring.cloud.gateway.routes[0].id=address-service
+spring.cloud.gateway.routes[0].uri=lb://address-service
+spring.cloud.gateway.routes[0].predicates[0]=Path=/api/microservices
+

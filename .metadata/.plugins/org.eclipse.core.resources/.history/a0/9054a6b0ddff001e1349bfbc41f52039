@@ -1,0 +1,16 @@
+package com.tcs.currencyexchange.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class CurrencyExchangeModel {
+    private String fromCurrency;
+    private String toCurrency;
+    private double quantity;
+    private double exchangeRate;
+    private double total;
+    }

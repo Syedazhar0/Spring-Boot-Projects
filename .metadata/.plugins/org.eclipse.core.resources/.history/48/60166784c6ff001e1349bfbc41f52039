@@ -1,0 +1,23 @@
+package com.tcs.currencyconversion.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.tcs.currencyconversion.entity.CurrencyConversion;
+import com.tcs.currencyconversion.repository.CurrencyRepository;
+
+@Service
+public class CurrencyCunversionService {
+	@Autowired private CurrencyRepository currencyRepository;
+
+	public CurrencyConversion getCurrencyById(long id) {
+	
+		return  currencyRepository.findById(id).get();
+	}
+
+	public CurrencyConversion saveCurrency(CurrencyConversion conversion) {
+		// TODO Auto-generated method stub
+		return currencyRepository.save(conversion);
+	}
+
+}
